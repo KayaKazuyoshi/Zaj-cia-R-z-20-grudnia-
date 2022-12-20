@@ -1,2 +1,0 @@
-adult <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test", skip=1, header=FALSE, stringsAsFactors = TRUE)
-sum(adult[,7]==" ?" | adult[,2]==" ?" | adult[,14]==" ?")

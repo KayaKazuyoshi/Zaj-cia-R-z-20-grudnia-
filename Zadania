@@ -1,0 +1,9 @@
+adult <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test", skip=1, header=FALSE, stringsAsFactors = TRUE)
+sum(adult[,7]==" ?" | adult[,2]==" ?" | adult[,14]==" ?")
+wektor_z_NA <- adult[,7]==" ?" | adult[,2]==" ?" | adult[,14]==" ?"
+which(wektor_z_NA)
+adult_bez_NA <- adult[which(wektor_z_NA)]
+adult_bez_NA <- adult[!wektor_z_NA]
+sum(adult[,11]==0)
+sum(adult_bez_NA[,11]==0 | adult_bez_NA[,12]==0)
+adult_bez_NA <- adult[which(wektor_z_NA), -c(11, 12)]
